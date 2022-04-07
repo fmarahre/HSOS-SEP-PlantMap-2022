@@ -112,6 +112,38 @@ echo '#misc'
 echo '####################################################'
 # apt-get update && apt install
 # TOD Vue, Django
+#####*BACKEND*#####
+echo '####################################################'
+echo '#INSTALL BACKEND'
+echo '####################################################'
+
+echo '### - django - ###'
+pip3 install django==4.0
+pip3 install djangorestframework
+pip3 install django-cors-headers
+
+#####*FRONTEND*#####
+echo '####################################################'
+echo '#INSTALL FRONTEND'
+echo '####################################################'
+
+echo '### - npm - ###'
+apt-get update -q && apt-get install -qy npm
+
+echo '### - nodejs 14.x - ###'
+curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
+apt install nodejs -y
+
+echo '### - create-vue - ###'
+npm install -g create-vue
+
+echo '### - axios - ###'
+npm install --save axios
+npm install --save vue-axios
+
+echo '### - leaflet - ###'
+npm i leaflet
+npm i @types/leaflet
 
 # remove apt lists so that they are not saved in the image layers
 rm -rf /var/lib/apt/lists/*
