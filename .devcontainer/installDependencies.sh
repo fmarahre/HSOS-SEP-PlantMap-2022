@@ -135,7 +135,7 @@ curl -sL https://deb.nodesource.com/setup_14.x | sudo -E bash -
 apt install nodejs -y
 
 echo '### - create-vue - ###'
-npm install @vue/cli
+npm install -g @vue/cli
 
 echo '### - axios - ###'
 npm install --save axios
