@@ -145,5 +145,11 @@ echo '### - leaflet - ###'
 npm i leaflet
 npm i @types/leaflet
 
+echo '####################################################'
+echo '#install gRPC'
+echo '####################################################'
+pip3 install grpcio
+pip3 install grpcio-tools
+
 # remove apt lists so that they are not saved in the image layers
 rm -rf /var/lib/apt/lists/*
