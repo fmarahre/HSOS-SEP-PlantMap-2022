@@ -127,6 +127,8 @@ echo '####################################################'
 echo '#INSTALL FRONTEND'
 echo '####################################################'
 
+##Test##
+
 echo '### - npm - ###'
 apt-get update -q && apt-get install -qy npm
 
