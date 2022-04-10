@@ -1,10 +1,6 @@
-<script setup lang="ts">
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "@/components/HelloWorld.vue";
-</script>
-
 <template>
-  <header>
+  <NavBar />
+  <!-- <header>
     <img
       alt="Vue logo"
       class="logo"
@@ -14,28 +10,44 @@ import HelloWorld from "@/components/HelloWorld.vue";
     />
 
     <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+      <HelloWorld msg="You did it!" /> -->
 
-      <nav>
+  <!-- <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">bedsTable</RouterLink>
-      </nav>
-    </div>
-  </header>
+      </nav> -->
+  <!-- </div>
+  </header> -->
 
   <RouterView />
 </template>
 
+<script lang="ts">
+import { BedsStore } from "@/stores/bedsStore.ts";
+import NavBar from "@/components/NavBar.vue";
+
+export default {
+  name: "App",
+  components: {
+    NavBar,
+  },
+  mounted() {
+    const main = BedsStore();
+    main.getBedsFromAPI();
+  },
+};
+</script>
+
 <style>
 @import "@/assets/base.css";
 
-#app {
+/* #app {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
 
   font-weight: normal;
-}
+} */
 
 header {
   line-height: 1.5;
@@ -47,7 +59,7 @@ header {
   margin: 0 auto 2rem;
 }
 
-a,
+/* a,
 .green {
   text-decoration: none;
   color: hsla(160, 100%, 37%, 1);
@@ -58,9 +70,9 @@ a,
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
-}
+} */
 
-nav {
+/* nav {
   width: 100%;
   font-size: 12px;
   text-align: center;
@@ -83,9 +95,9 @@ nav a {
 
 nav a:first-of-type {
   border: 0;
-}
+} */
 
-@media (min-width: 1024px) {
+/* @media (min-width: 1024px) {
   body {
     display: flex;
     place-items: center;
@@ -121,5 +133,5 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
-}
+} */
 </style>
